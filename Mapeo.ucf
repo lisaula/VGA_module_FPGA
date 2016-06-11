@@ -1,0 +1,43 @@
+//Clock
+NET "clk50mhz" LOC="B8"; 
+
+//switches
+//Net "red_in" LOC="J11" | IOSTANDARD = LVCMOS33;
+//Net "green_in" LOC="J12" | IOSTANDARD = LVCMOS33;
+//Net "blue_in" LOC="H16" | IOSTANDARD = LVCMOS33;
+
+//hsync y vsync
+//Net "hsync" LOC ="M16" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//Net "vsync" LOC ="L14" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//RGB outs
+//Net "red_out" LOC ="T13" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//Net "green_out" LOC ="R11" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+//Net "blue_out" LOC ="T8" | IOSTANDARD = LVCMOS33 | SLEW = FAST | DRIVE = 8;
+
+//reset
+//Net "reset" LOC="C13" | IOSTANDARD = LVCMOS33;
+
+
+//----------------------------------
+# Rojo (GPIO0)
+
+Net "red_out" LOC="A10" | IOSTANDARD = LVCMOS33;
+
+# Verde (GPIO1)
+
+Net "green_out" LOC="E11" | IOSTANDARD = LVCMOS33;
+
+# Azul (GPIO2)
+
+Net "blue_out" LOC="E10" | IOSTANDARD = LVCMOS33;
+
+# hsync (GPIO3)
+
+Net "hsync" LOC="D10" | IOSTANDARD = LVCMOS33;
+
+# vsync (GPIO4)
+
+Net "vsync" LOC="E9" | IOSTANDARD = LVCMOS33;
+//reset button
+Net "reset" LOC="C13" | IOSTANDARD = LVCMOS33;

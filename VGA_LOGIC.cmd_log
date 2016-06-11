@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/Raim/Documents/Laboratorio/VGA/VGA_LOGIC.xst" -ofn "C:/Users/Raim/Documents/Laboratorio/VGA/VGA_LOGIC.syr" 

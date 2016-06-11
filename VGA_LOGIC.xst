@@ -1,0 +1,5 @@
+set -tmpdir "C:/Users/Raim/Documents/Laboratorio/VGA/xst/projnav.tmp"
+set -xsthdpdir "C:/Users/Raim/Documents/Laboratorio/VGA/xst"
+elaborate
+-ifn VGA_LOGIC.prj
+-ifmt mixed

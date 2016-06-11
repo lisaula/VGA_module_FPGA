@@ -1,0 +1,392 @@
+Release 14.7 - xst P.20131013 (nt)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.23 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.24 secs
+ 
+--> Reading design: VGA_LOGIC.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "VGA_LOGIC.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "VGA_LOGIC"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-ft256
+
+---- Source Options
+Top Module Name                    : VGA_LOGIC
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "VGA_LOGIC.v" in library work
+Module <VGA_LOGIC> compiled
+No errors in compilation
+Analysis of file <"VGA_LOGIC.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <VGA_LOGIC> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <VGA_LOGIC>.
+WARNING:Xst:905 - "VGA_LOGIC.v" line 16: One or more signals are missing in the sensitivity list of always block. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <hcount>, <vcount>, <red_in>, <green_in>, <blue_in>
+Module <VGA_LOGIC> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <VGA_LOGIC>.
+    Related source file is "VGA_LOGIC.v".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:737 - Found 10-bit latch for signal <$old_vcount_1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 10-bit comparator greatequal for signal <hsync$cmp_ge0000> created at line 36.
+    Found 10-bit comparator less for signal <hsync$cmp_lt0000> created at line 36.
+    Found 10-bit adder for signal <old_hcount_2$addsub0000> created at line 27.
+    Found 10-bit adder for signal <old_vcount_1$addsub0000> created at line 24.
+    Found 10-bit comparator less for signal <red_out$cmp_lt0000> created at line 42.
+    Found 10-bit comparator less for signal <red_out$cmp_lt0001> created at line 42.
+    Found 10-bit comparator greatequal for signal <vsync$cmp_ge0000> created at line 30.
+    Found 10-bit comparator less for signal <vsync$cmp_lt0000> created at line 30.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 Comparator(s).
+Unit <VGA_LOGIC> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 2
+# Latches                                              : 1
+ 10-bit latch                                          : 1
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 4
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 10-bit adder                                          : 2
+# Latches                                              : 1
+ 10-bit latch                                          : 1
+# Comparators                                          : 6
+ 10-bit comparator greatequal                          : 2
+ 10-bit comparator less                                : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2170 - Unit VGA_LOGIC : the following signal(s) form a combinatorial loop: old_vcount_1_cmp_eq0000, blue_out, hcount<8>, red_out_cmp_lt0000, red_out_and0000, hcount<0>.
+WARNING:Xst:2170 - Unit VGA_LOGIC : the following signal(s) form a combinatorial loop: hcount<9>, Madd_old_hcount_2_addsub0000_cy<3>, Madd_old_hcount_2_addsub0000_cy<2>, Madd_old_hcount_2_addsub0000_cy<7>, old_hcount_2_addsub0000<9>, Madd_old_hcount_2_addsub0000_cy<1>, Madd_old_hcount_2_addsub0000_cy<6>, hsync, Madd_old_hcount_2_addsub0000_cy<5>, hcount<1>, Madd_old_hcount_2_addsub0000_cy<4>, old_hcount_2_addsub0000<1>, hsync_cmp_ge0000, Madd_old_hcount_2_addsub0000_cy<8>.
+
+Optimizing unit <VGA_LOGIC> ...
+
+Mapping all equations...
+WARNING:Xst:2170 - Unit VGA_LOGIC : the following signal(s) form a combinatorial loop: hcount<4>, old_hcount_2_addsub0000<4>, hsync, N11.
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block VGA_LOGIC, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : VGA_LOGIC.ngr
+Top Level Output File Name         : VGA_LOGIC
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 93
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 9
+#      LUT2                        : 28
+#      LUT3                        : 2
+#      LUT4                        : 9
+#      LUT4_D                      : 1
+#      MUXCY                       : 18
+#      MUXF5                       : 2
+#      VCC                         : 1
+#      XORCY                       : 20
+# FlipFlops/Latches                : 10
+#      LD                          : 10
+# IO Buffers                       : 8
+#      IBUF                        : 3
+#      OBUF                        : 5
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500eft256-5 
+
+ Number of Slices:                       29  out of   4656     0%  
+ Number of Slice Flip Flops:             10  out of   9312     0%  
+ Number of 4 input LUTs:                 51  out of   9312     0%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   8  out of    190     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+----------------------------------------------------+-------------------------+-------+
+Clock Signal                                        | Clock buffer(FF name)   | Load  |
+----------------------------------------------------+-------------------------+-------+
+old_vcount_1_cmp_eq0000(old_vcount_1_cmp_eq000023:O)| NONE(*)(_old_vcount_1_0)| 10    |
+----------------------------------------------------+-------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 4.573ns (Maximum Frequency: 218.682MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 7.606ns
+   Maximum combinational path delay: 5.670ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'old_vcount_1_cmp_eq0000'
+  Clock period: 4.573ns (frequency: 218.682MHz)
+  Total number of paths / destination ports: 155 / 10
+-------------------------------------------------------------------------
+Delay:               4.573ns (Levels of Logic = 11)
+  Source:            _old_vcount_1_1 (LATCH)
+  Destination:       _old_vcount_1_9 (LATCH)
+  Source Clock:      old_vcount_1_cmp_eq0000 falling
+  Destination Clock: old_vcount_1_cmp_eq0000 falling
+
+  Data Path: _old_vcount_1_1 to _old_vcount_1_9
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.588   0.603  _old_vcount_1_1 (_old_vcount_1_1)
+     LUT1:I0->O            1   0.612   0.000  Madd_old_vcount_1_addsub0000_cy<1>_rt (Madd_old_vcount_1_addsub0000_cy<1>_rt)
+     MUXCY:S->O            1   0.404   0.000  Madd_old_vcount_1_addsub0000_cy<1> (Madd_old_vcount_1_addsub0000_cy<1>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<2> (Madd_old_vcount_1_addsub0000_cy<2>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<3> (Madd_old_vcount_1_addsub0000_cy<3>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<4> (Madd_old_vcount_1_addsub0000_cy<4>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<5> (Madd_old_vcount_1_addsub0000_cy<5>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<6> (Madd_old_vcount_1_addsub0000_cy<6>)
+     MUXCY:CI->O           1   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<7> (Madd_old_vcount_1_addsub0000_cy<7>)
+     MUXCY:CI->O           0   0.052   0.000  Madd_old_vcount_1_addsub0000_cy<8> (Madd_old_vcount_1_addsub0000_cy<8>)
+     XORCY:CI->O           1   0.699   0.426  Madd_old_vcount_1_addsub0000_xor<9> (old_vcount_1_addsub0000<9>)
+     LUT2:I1->O            1   0.612   0.000  old_vcount_1_mux0000<0>1 (old_vcount_1_mux0000<0>)
+     LD:D                      0.268          _old_vcount_1_9
+    ----------------------------------------
+    Total                      4.573ns (3.544ns logic, 1.029ns route)
+                                       (77.5% logic, 22.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'old_vcount_1_cmp_eq0000'
+  Total number of paths / destination ports: 24 / 4
+-------------------------------------------------------------------------
+Offset:              7.606ns (Levels of Logic = 4)
+  Source:            _old_vcount_1_7 (LATCH)
+  Destination:       blue_out (PAD)
+  Source Clock:      old_vcount_1_cmp_eq0000 falling
+
+  Data Path: _old_vcount_1_7 to blue_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               3   0.588   0.603  _old_vcount_1_7 (_old_vcount_1_7)
+     LUT4:I0->O            2   0.612   0.449  red_out_and000011 (N01)
+     LUT4:I1->O            3   0.612   0.603  red_out_and0000 (red_out_and0000)
+     LUT2:I0->O            1   0.612   0.357  red_out1 (red_out_OBUF)
+     OBUF:I->O                 3.169          red_out_OBUF (red_out)
+    ----------------------------------------
+    Total                      7.606ns (5.593ns logic, 2.013ns route)
+                                       (73.5% logic, 26.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               5.670ns (Levels of Logic = 3)
+  Source:            blue_in (PAD)
+  Destination:       blue_out (PAD)
+
+  Data Path: blue_in to blue_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.106   0.426  blue_in_IBUF (blue_in_IBUF)
+     LUT2:I1->O            1   0.612   0.357  blue_out1 (blue_out_OBUF)
+     OBUF:I->O                 3.169          blue_out_OBUF (blue_out)
+    ----------------------------------------
+    Total                      5.670ns (4.887ns logic, 0.783ns route)
+                                       (86.2% logic, 13.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.87 secs
+ 
+--> 
+
+Total memory usage is 199728 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
