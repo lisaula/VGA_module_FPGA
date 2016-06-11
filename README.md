@@ -7,5 +7,7 @@ with a resolution of 640X480. This project was made in Verilog, which is a desig
 -Main: here we make all the connections needed to send all the color data from the Rom_CarBlue to the VGA_Logic. Furthermore we divide de FPGA clock to a minus frequency in order to accomplish the VGA standards.
 
 Developers:
+
 -Lisaula
+
 -KenyStev
