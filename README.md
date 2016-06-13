@@ -1,7 +1,7 @@
 # VGA_module_FPGA
 
 How to display images with the FPGA, not a simple thing. In this project we emulate the VGA standards in order to draw in a screen 
-with a resolution of 640X480. This project was made in Verilog, which is a design hardware language. For this project we create 3 modules:
+with a resolution of 640X480. This project was made in Verilog, which is a hardware design language. For this project we create 3 modules:
 
 -VGA_LOGIC: which has all the necessary instructions to emulate the VGA standard.
 
